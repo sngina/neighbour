@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render , redirect
 from django.http import HttpResponse ,Http404 
 from .models import  Neighbourhood ,User , Business
 from django.contrib.auth.decorators import login_required
-from .forms import NeighbourhoodForm ,UserForm ,BusinessForm
+from .forms import NeighbourhoodForm ,UserForm ,BusinessForm , ProfileForm
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
