@@ -35,3 +35,7 @@ class Neighbourhood(models.Model):
     def update(cls , id , update):
         occupants = cls.objects.filter(id=id).update(occupants = update)
     
+class User(models.Model):
+     user_name = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
+     id = models.CharField(max_length=350)
+     email = models.EmailField()
