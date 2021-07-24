@@ -39,3 +39,22 @@ class User(models.Model):
      user_name = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
      id = models.CharField(max_length=350)
      email = models.EmailField()
+
+class Business(models.Model):
+    name = models.CharField(max_length=300)
+    email = models.EmailField()
+
+    def __str__(self) :
+        return self.name
+
+    #create function
+    def save_business(self):
+        self.save()
+
+    @classmethod
+    def search_business(cls ,business):
+        business = cls.objects.filter(business_name = business)
+
+    @classmethod
+    def update(cls , id , update):
+        business = cls.objects.filter(id = id).update(business = update)
