@@ -22,3 +22,14 @@ def post_neighbourhood(request):
     return render(request , 'profile/index.html' ,{"jirani":jirani})
 
 #function for searching 
+def search(request):
+    if 'business' in request.Get and request.GET["business"]:
+        search_term = request.GET.get("business")
+        search_business = Business.search_business(search_term)
+        message = f"{search_term}"
+
+        return render(request , 'profile/search.html' , {"message":message ,"search_profile":search_business})
+
+    else:
+        message = "No Business searched yet!"
+        return render(request , 'profile/search.html')
