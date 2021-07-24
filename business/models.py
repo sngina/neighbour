@@ -2,6 +2,8 @@ from django.db import models
 from django.shortcuts import render , redirect
 from django.dispatch import receiver
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+
 
 # Create your models here.
 
@@ -25,6 +27,8 @@ class Neighbourhood(models.Model):
     @classmethod
     def search_neighbourhood(cls ,neighbourhood ):
         name = cls.objects.filter(location_name = neighbourhood)
+
+        return name
 
 #update function
     @classmethod
