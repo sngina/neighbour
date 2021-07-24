@@ -11,7 +11,7 @@ class Neighbourhood(models.Model):
     name = models.CharField(max_length=30)
     location = models.CharField(max_length=30)
     occupants = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
-
+    image = models.ImageField(upload_to = 'image/' , null = True)
     def __str__(self):
         return self.name
 

@@ -14,7 +14,7 @@ def post_neighbourhood(request):
     if request.method == 'POST':
         form = NeighbourhoodForm(request.POST , request.FILES)
         if form.is_valid():
-            nform = form.save()
+            nform = form.save(commit=False)
             nform.user= request.user
             nform.save()
             return redirect('homepage')
