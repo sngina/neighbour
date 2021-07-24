@@ -41,7 +41,7 @@ class Neighbourhood(models.Model):
     
 class Profile(models.Model):
     user_name = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
-    email = models.EmailField()
+    photo= models.ImageField(upload_to = '/image' , null = True)
 
     @receiver(pre_save , sender = User)
     def create_user_profile(sender , instance , created , **kwargs):
