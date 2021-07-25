@@ -40,13 +40,13 @@ class Neighbourhood(models.Model):
         occupants = cls.objects.filter(id=id).update(occupants = update)
     
 class Profile(models.Model):
-    user_name = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
+    username = models.OneToOneField(User , on_delete=models.CASCADE , null= True)
     photo= models.ImageField(upload_to = 'image/' , null = True)
 
-    @receiver(pre_save , sender = User)
+    @receiver(post_save , sender = User)
     def create_user_profile(sender , instance , created , **kwargs):
         if created:
-            Profile.objects.create(user = instance)
+            Profile.objects.create(username = instance)
     @receiver(post_save , sender = User)
     def save_user_profile(sender , instance ,**kwargs):
         instance.profile.save()

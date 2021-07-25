@@ -21,4 +21,4 @@ class BusinessForm(forms.ModelForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('user_name' , 'photo')
+        fields = ('username' , 'photo')

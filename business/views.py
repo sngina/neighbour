@@ -18,8 +18,9 @@ def post_neighbourhood(request):
             nform.user= request.user
             nform.save()
             return redirect('homepage')
+    form = NeighbourhoodForm()
 
-    return render(request , 'profile/index.html' ,{"jirani":jirani})
+    return render(request , 'profile/index.html' ,{"jirani":jirani , "form":form})
 
 #function for searching 
 def search(request):
