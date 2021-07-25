@@ -1,1 +1,30 @@
+{%extends 'registration/base.html'%}
+{%load crispy_forms_tags%}
+{% load bootstrap3%}
+{%block content%}
 
+<div class="business">
+
+    <form action="{% url 'homepage'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token %}
+        <div class="form">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                style="text-align:left;">
+                Post a business
+            </button>
+        </div>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content p-2">
+                    {%bootstrap_form  businessform%}
+
+                    <input type="submit" class="btn btn-primary" style="width: 40%;">
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+{%endblock%}
