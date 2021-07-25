@@ -23,6 +23,7 @@ def post_neighbourhood(request):
 
 #function for searching 
 def search(request):
+
     if 'business' in request.Get and request.GET["business"]:
         search_term = request.GET.get("business")
         search_business = Business.search_business(search_term)
@@ -33,3 +34,7 @@ def search(request):
     else:
         message = "No Business searched yet!"
         return render(request , 'profile/search.html')
+def userpage(request):
+	user_form = UserForm(instance=request.user)
+	profile_form = ProfileForm(instance=request.user.profile)
+	return render(request,"profile.html", context={"user":request.user, "user_form":user_form, "profile_form":profile_form })
