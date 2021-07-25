@@ -1,0 +1,16 @@
+body{
+    background-image: url(../image/webaliser-_TPTXZd9mOo-unsplash.jpg);
+    background-size: cover;
+    
+}
+.hood{
+    padding: 20px;
+    height: 10px;
+    width: 400px;
+    text-align: center;
+}
+.sam{
+    height:300px;
+    text-align:center;
+    padding: 50px;
+}

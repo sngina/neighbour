@@ -25,6 +25,22 @@
         </div>
 
     </form>
+    <div class="container jirani">
+        <div class="row"> 
+            <div class="hood">
+                {%for neighbourhood in jirani%}
+                <div class="container">
+                <div class="card sam">
+                    <p>{{neighbourhood.name}}</p>
+                    <p>{{neighbourhood.location}}</p>
+                    <p>{{neighbourhood.occupants}}</p>
+                </div>
+                </div>
 
+            </div>
+            {%endfor%}
+        </div>
+
+    </div>
 </div>
 {%endblock%}

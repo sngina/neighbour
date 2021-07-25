@@ -38,4 +38,4 @@ def search(request):
 def userpage(request):
 	user_form = UserForm(instance=request.user)
 	profile_form = ProfileForm(instance=request.user.profile)
-	return render(request,"profile.html", context={"user":request.user, "user_form":user_form, "profile_form":profile_form })
+	return render(request,"registration/profile.html", context={"user":request.user, "user_form":user_form, "profile_form":profile_form })
