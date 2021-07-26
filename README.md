@@ -20,7 +20,7 @@ Follow this link 'https://jiraningina.herokuapp.com/'
 ---
 ## Access DashBoard
 
-Follow this link 'https://nginaaward.herokuapp.com/admin'
+Follow this link 'https://jiraningina.herokuapp.com/'
 
 
 
