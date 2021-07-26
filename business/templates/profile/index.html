@@ -22,8 +22,8 @@
                 </div>
             </div>
         </div>
-        
-       
+
+
     </form> <br>
     <form action="{% url 'postbusiness'%}" method="post" enctype="multipart/form-data">
         {%csrf_token %}
@@ -42,21 +42,21 @@
                 </div>
             </div>
         </div>
-        
-       
+
+
     </form>
     <div class="container jirani">
-        <div class="row"> 
+        <div class="row">
             <div class="hood">
                 {%for neighbourhood in jirani%}
                 <div class="container">
-                <div class="card sam">
-                    <p>{{neighbourhood.name}}</p>
-                    <p>{{neighbourhood.location}}</p>
-                    <p>{{neighbourhood.occupants}}</p>
-                    
+                    <div class="card sam">
+                        <p>{{neighbourhood.name}}</p>
+                        <p>{{neighbourhood.location}}</p>
+                        <p>{{neighbourhood.occupants}}</p>
 
-                </div>
+
+                    </div>
                 </div>
                 <div class="biashara">
 
@@ -64,13 +64,13 @@
 
             </div>
             {%endfor%}
-            <div class="business">
+            <div class="pesa">
                 {%for business in  allbusiness%}
-                <div class="biashara">
-                <p>{{business.name}}</p>
-                <p>{{business.email}}</p>
-                <p>{{business.description}}</p>
-                <img src="{{business.image.url}}" >
+                <div class="card" style="width: 40%;">
+                    <p>{{business.name}}</p>
+                    <p>{{business.email}}</p>
+                    <p>{{business.description}}</p>
+                    <img src="{{business.image.url}}">
                 </div>
                 {%endfor%}
             </div>
