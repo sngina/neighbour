@@ -20,7 +20,7 @@ Follow this link 'https://jiraningina.herokuapp.com/'
 ---
 ## Access DashBoard
 
-Follow this link 'https://jiraningina.herokuapp.com/'
+Follow this link 'https://jiraningina.herokuapp.com/admi'
 
 
 
