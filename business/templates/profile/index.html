@@ -10,20 +10,40 @@
         <div class="form">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
                 style="text-align:left;">
-                Post a business
+                Post a hood
             </button>
         </div>
         <div class="modal" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content p-2">
                     {%bootstrap_form  form%}
-
                     <input type="submit" class="btn btn-primary" style="width: 40%;">
 
                 </div>
             </div>
         </div>
+        
+       
+    </form> <br>
+    <form action="{% url 'postbusiness'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token %}
+        <div class="form">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalbus"
+                style="text-align:left;">
+                Post a business
+            </button>
+        </div>
+        <div class="modal" id="myModalbus">
+            <div class="modal-dialog">
+                <div class="modal-content p-2">
+                    {%bootstrap_form   busformm%}
+                    <input type="submit" class="btn btn-primary" style="width: 40%;">
 
+                </div>
+            </div>
+        </div>
+        
+       
     </form>
     <div class="container jirani">
         <div class="row"> 
@@ -34,7 +54,11 @@
                     <p>{{neighbourhood.name}}</p>
                     <p>{{neighbourhood.location}}</p>
                     <p>{{neighbourhood.occupants}}</p>
+                
                 </div>
+                </div>
+                <div class="biashara">
+
                 </div>
 
             </div>

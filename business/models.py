@@ -55,6 +55,7 @@ class Business(models.Model):
     name = models.CharField(max_length=300)
     email = models.EmailField()
     description = models.TextField()
+    image = models.ImageField(upload_to = 'image/' , null = True)
     def __str__(self) :
         return self.name
 

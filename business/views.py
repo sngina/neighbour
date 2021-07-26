@@ -19,9 +19,20 @@ def post_neighbourhood(request):
             nform.save()
             return redirect('homepage')
     form = NeighbourhoodForm()
+    busformm = BusinessForm()
+    return render(request , 'profile/index.html' ,{"jirani":jirani , "form":form , "busformm":busformm})
 
-    return render(request , 'profile/index.html' ,{"jirani":jirani , "form":form})
-
+def post_business(request):
+    business =  Business.objects.all()
+    if request.method== 'POST':
+        formm = BusinessForm(request.POST , request.FILES)
+        if formm.is_valid():
+            sform = formm.save(commit=False)
+            sform.user = request.user
+            sform.save()
+            return redirect('homepage')
+    busformm = BusinessForm()
+    return render(request, 'profile/index.html' , {"business":business , "formm":formm})
 #function for searching 
 def search(request):
 

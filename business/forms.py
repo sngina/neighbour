@@ -16,7 +16,7 @@ class NeighbourhoodForm(forms.ModelForm):
 class BusinessForm(forms.ModelForm):
     class Meta:
         model = Business
-        fields = ('name' ,'email')
+        fields = ('name' ,'email' , 'description' , 'image')
 
 class ProfileForm(forms.ModelForm):
     class Meta:

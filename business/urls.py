@@ -9,6 +9,7 @@ urlpatterns=[
     url(r'^user/' , views.userpage , name='username'),
     url(r'^accounts/' ,include('registration.backends.simple.urls')),
     url(r'accounts/', include('django.contrib.auth.urls')),
+    url(r'^business/' , views.post_business , name='postbusiness'),
 
 
 ]
