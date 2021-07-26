@@ -20,7 +20,8 @@ def post_neighbourhood(request):
             return redirect('homepage')
     form = NeighbourhoodForm()
     busformm = BusinessForm()
-    return render(request , 'profile/index.html' ,{"jirani":jirani , "form":form , "busformm":busformm})
+    business = Business.objects.all()
+    return render(request , 'profile/index.html' ,{"jirani":jirani , "form":form , "busformm":busformm ,"allbusiness":business})
 
 def post_business(request):
     business =  Business.objects.all()
@@ -31,8 +32,7 @@ def post_business(request):
             sform.user = request.user
             sform.save()
             return redirect('homepage')
-    busformm = BusinessForm()
-    return render(request, 'profile/index.html' , {"business":business , "formm":formm})
+    
 #function for searching 
 def search(request):
 

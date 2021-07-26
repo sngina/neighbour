@@ -54,7 +54,8 @@
                     <p>{{neighbourhood.name}}</p>
                     <p>{{neighbourhood.location}}</p>
                     <p>{{neighbourhood.occupants}}</p>
-                
+                    
+
                 </div>
                 </div>
                 <div class="biashara">
@@ -63,6 +64,16 @@
 
             </div>
             {%endfor%}
+            <div class="business">
+                {%for business in  allbusiness%}
+                <div class="biashara">
+                <p>{{business.name}}</p>
+                <p>{{business.email}}</p>
+                <p>{{business.description}}</p>
+                <img src="{{business.image.url}}" >
+                </div>
+                {%endfor%}
+            </div>
         </div>
 
     </div>
